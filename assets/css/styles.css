@@ -25,23 +25,56 @@ body {
   /* Version con writing mode */
   /* transform-origin: left bottom; */
   transform: rotate(180deg);
-  writing-mode: vertical-lr; /* Manera de poner texto en vertical */
+  writing-mode: vertical-rl; /* Manera de poner texto en vertical */
   position: absolute;
-  left: 4em;
-  height: 100vh;
+  left: 2em;
+  height: calc(100vh -  4em);
   bottom: 0;
   text-align: center;
-  border: 1px solid red;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+}
+
+.navigation .text{
+    display: inline-flex;
+    margin: 35px 0;
+    transition: all ease-in 0.3s 0s;
+}
+
+.navigation .text:hover{
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+.links{
+
 }
 
 /* Pseudolements */
 
+.assets{
+    display: flex;
+    align-items: center;
+}
+
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background-color: black;
   border-radius: 50%;
   display: inline-flex;
+  margin: 5px 0;
+}
+
+.line{
+    width: 2px;
+    height: 150px;
+    background-color: black;
+    display: inline-flex;
+    margin: 15px 0;
 }
 
 /* Character */
@@ -106,8 +139,8 @@ body {
   .character-name h2:after {
     content: "";
     width: 87px;
-    height: 6px;
-    background-color: #f73910;
+    height:4px;
+    background-color: #b1290a;
     display: inline-flex;
     position: absolute;
     left: calc(100% + 5px);
