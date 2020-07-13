@@ -4,6 +4,10 @@ import Character from "./character.js";
 //* Instance of the API
 const api = new API();
 
+let currentCharacter;
+
+let currentIdCharacter = 1;
+
 //* Wait for page to load
 document.addEventListener("DOMContentLoaded", initApp);
 
@@ -13,6 +17,15 @@ document.addEventListener("DOMContentLoaded", initApp);
 function initApp() {
   api.getCharacter(1).then((character) => {
     console.log(character);
-    new Character(character);
+    currentCharacter = new Character(character);
   });
 }
+
+const arrowNextCharacter = document.getElementById("arrow-next");
+
+arrowNextCharacter.addEventListener("click", () => {
+  api.getCharacter(++currentIdCharacter).then((character) => {
+    console.log(character);
+      currentCharacter.setCharacter(character);
+  });
+});

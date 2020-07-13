@@ -13,6 +13,11 @@ export default class Character {
     this.render();
   }
 
+  setCharacter(character){
+      this.character = character;
+      this.render();
+  }
+
   //* Create html template for the character info
   setCharacterImageTemplate() {
     return `
