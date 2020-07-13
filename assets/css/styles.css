@@ -162,9 +162,7 @@ body {
   }
 }
 
-
-.assets{
-
+.assets {
   writing-mode: vertical-rl;
   /* margin-inline-start: 4em; */
   border: 1px solid red;
@@ -185,24 +183,22 @@ body {
   height: calc(100vh - 8em);
   display: grid;
   grid-template-columns: 50px 1fr 1fr 200px;
-  grid-template-rows: 212px 120px 1fr 1fr 1fr;
+  grid-template-rows: 230px 120px 1fr 1fr 1fr;
   grid-template-areas:
     "asset-top logo logo redes"
     "name name-char imagen imagen"
     "about description imagen imagen"
     "asset-bottom character-text imagen imagen"
     "asset-bottom learn-more arrow other-line";
-    column-gap:8.18em;
+  column-gap: 8.18em;
 }
 
-.redes{
+.redes {
   grid-area: redes;
   border: 1px solid red;
 }
 
-
-
-.navigation{
+.navigation {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   display: flex;
@@ -210,31 +206,30 @@ body {
   justify-content: center;
 }
 
-.navigation.name{
+.navigation.name {
   border: 1px solid purple;
   grid-area: name;
 }
 
-.navigation.about{
+.navigation.about {
   border: 1px solid purple;
   grid-area: about;
 }
 
-.navigation a{
+.navigation a {
   text-decoration: none;
-  color:black;
+  color: black;
   font-size: 25px;
   text-transform: uppercase;
 }
 
-.character-name-container{
+.character-name-container {
   border: 1px solid black;
   display: flex;
   align-items: center;
 }
 
-
-.character-image-container{
+.character-image-container {
   grid-area: imagen;
   border: 1px solid red;
   display: flex;
@@ -242,22 +237,26 @@ body {
   align-items: center;
 }
 
-
-
-.character-description{
+.character-description {
   grid-area: description;
-  
 }
 
-
-.learn-more{
+.learn-more {
   grid-area: learn-more;
   border: 1px solid brown;
   display: flex;
   align-items: flex-end;
   font-size: 25px;
   text-transform: uppercase;
+  background-image: url("/assets/img/learn-more.svg");
+  background-repeat: no-repeat;
+  background-position: left 150px bottom 10px;
 }
 
-
-
+.arrow {
+  grid-area: arrow;
+  border: 1px solid rebeccapurple;
+  background-image: url("/assets/img/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
