@@ -6,6 +6,7 @@ body {
 }
 
 .logo {
+  grid-area: logo;
   margin: 0 auto 2em;
   display: block;
 }
@@ -21,11 +22,11 @@ body {
 /* Navigation */
 
 /* Repasar codigo, se puede hacer con direccion de pagina pero en este caso vamos a jugar con las rotaciones */
-.navigation {
-  /* Version con writing mode */
-  /* transform-origin: left bottom; */
+/* .navigation {
+  Version con writing mode
+  transform-origin: left bottom;
   transform: rotate(180deg);
-  writing-mode: vertical-rl; /* Manera de poner texto en vertical */
+  writing-mode: vertical-rl; Manera de poner texto en vertical
   position: absolute;
   left: 2em;
   height: calc(100vh - 4em);
@@ -35,7 +36,8 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 2em 0;
-}
+  display: none;
+} */
 
 .navigation .text {
   display: inline-flex;
@@ -159,3 +161,103 @@ body {
     max-width: 300px;
   }
 }
+
+
+.assets{
+
+  writing-mode: vertical-rl;
+  /* margin-inline-start: 4em; */
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+}
+.assets.top {
+  grid-area: asset-top;
+}
+
+.assets.bottom {
+  grid-area: asset-bottom;
+  justify-content: flex-end;
+}
+
+.grid {
+  padding: 4em;
+  height: calc(100vh - 8em);
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 200px;
+  grid-template-rows: 212px 120px 1fr 1fr 1fr;
+  grid-template-areas:
+    "asset-top logo logo redes"
+    "name name-char imagen imagen"
+    "about description imagen imagen"
+    "asset-bottom character-text imagen imagen"
+    "asset-bottom learn-more arrow other-line";
+    column-gap:8.18em;
+}
+
+.redes{
+  grid-area: redes;
+  border: 1px solid red;
+}
+
+
+
+.navigation{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation.name{
+  border: 1px solid purple;
+  grid-area: name;
+}
+
+.navigation.about{
+  border: 1px solid purple;
+  grid-area: about;
+}
+
+.navigation a{
+  text-decoration: none;
+  color:black;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.character-name-container{
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+
+.character-image-container{
+  grid-area: imagen;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.character-description{
+  grid-area: description;
+  
+}
+
+
+.learn-more{
+  grid-area: learn-more;
+  border: 1px solid brown;
+  display: flex;
+  align-items: flex-end;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+
+

@@ -14,30 +14,55 @@
 
 <body>
 
-
-    <header>
+    <div class="grid">
+        <span class="assets top">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="line"></span>
+        </span>
         <img class="logo" src="./assets/img/logo@2x.png" width="280" alt="Rick and morty log">
-    </header>
-    <aside class="navigation">
-        <span class="assets">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="line"></span>
-        </span>
-        <div class="links">
-            <span class="text">About</span>
-            <span class="text">Name</span>
+        <div class="redes">redes</div>
+        <div class="navigation name">
+            <a href="#">Name</a>
         </div>
-        <span class="assets">
+        <div id="character-name-container" class="character-name-container">
+            <div class="character-name">
+                <h2>Rick Sanchez</h2>
+            </div>
+        </div>
+
+        <div id="character-image-container" class="character-image-container">
+            <img class="character-img" src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="">
+
+        </div>
+
+        <span class="assets bottom">
             <span class="line"></span>
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
         </span>
-    </aside>
-    <div class="wrapper" id="character-container">
 
+
+        <div class="navigation about">
+            <a href="#">About</a>
+        </div>
+
+        <div class="character description container">
+
+            <div class="character-labels">
+                <h3 id="origin" class="character-label">Origin: Earth</h3>
+                <h3 id="origin" class="character-label">Specie: Human</h3>
+                <h3 id="status" class="character-label">Status: Alive</h3>
+            </div>
+        </div>
+        <div></div>
+        <div class="learn-more">
+            <span>Learn More</span>
+        </div>
+        <div>flecha</div>
+        <div>numero char</div>
     </div>
 
     <script type="module" src="./assets/js/app.js"></script>
