@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick and Morty</title>
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
     <!-- Estilos -->
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
+
 <body>
 
 
     <header>
         <img class="logo" src="./assets/img/logo@2x.png" width="280" alt="Rick and morty log">
     </header>
+    <div class="character-container">
 
-    <div class="character"></div>
-    
-
+    </div>
+    <aside class="navigation">
+        <span>About</span>
+        <span>Name</span>
+        <span class="assets">
+            <span class="line"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </span>
+    </aside>
+    <div class="wrapper">
+        <article class="character">
+            <div class="character-grid">
+                <div class="character-name">
+                    <h2>Ricardo Sanchez</h2>
+                </div>
+                <img class="character-img" src="https://rickandmortyapi.com/api/character/avatar/176.jpeg" alt="">
+                <div class="character-labels">
+                    <h3 class="character-label">Origin: Earth (C-137)</h3>
+                    <h3 class="character-label">Specie: Human</h3>
+                    <h3 class="character-label">Status: Alive</h3>
+                </div>
+            </div>
+        </article>
+    </div>
 
     <script type="module" src="./assets/js/app.js"></script>
 </body>
+
 </html>
