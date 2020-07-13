@@ -28,7 +28,7 @@ body {
   writing-mode: vertical-rl; /* Manera de poner texto en vertical */
   position: absolute;
   left: 2em;
-  height: calc(100vh -  4em);
+  height: calc(100vh - 4em);
   bottom: 0;
   text-align: center;
   text-transform: uppercase;
@@ -37,27 +37,26 @@ body {
   padding: 2em 0;
 }
 
-.navigation .text{
-    display: inline-flex;
-    margin: 35px 0;
-    transition: all ease-in 0.3s 0s;
+.navigation .text {
+  display: inline-flex;
+  margin: 35px 0;
+  transition: all ease-in 0.3s 0s;
 }
 
-.navigation .text:hover{
-    cursor: pointer;
-    outline: none;
-    font-weight: bold;
+.navigation .text:hover {
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
 }
 
-.links{
-
+.links {
 }
 
 /* Pseudolements */
 
-.assets{
-    display: flex;
-    align-items: center;
+.assets {
+  display: flex;
+  align-items: center;
 }
 
 .dot {
@@ -69,12 +68,12 @@ body {
   margin: 5px 0;
 }
 
-.line{
-    width: 2px;
-    height: 150px;
-    background-color: black;
-    display: inline-flex;
-    margin: 15px 0;
+.line {
+  width: 2px;
+  height: 150px;
+  background-color: black;
+  display: inline-flex;
+  margin: 15px 0;
 }
 
 /* Character */
@@ -139,7 +138,7 @@ body {
   .character-name h2:after {
     content: "";
     width: 87px;
-    height:4px;
+    height: 4px;
     background-color: #b1290a;
     display: inline-flex;
     position: absolute;
