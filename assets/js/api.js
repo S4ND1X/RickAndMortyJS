@@ -1,13 +1,14 @@
 export default class API {
   getLocation() {}
 
-  getCharacter() {
-    fetch("https://rickandmortyapi.com/api/character/1")
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-      });
+  async getCharacter(id) {
+    const url = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+
+    const response = await url.json();
+
+    return response;
   }
 
   getEpisode() {}
 }
+
