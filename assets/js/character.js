@@ -13,9 +13,9 @@ export default class Character {
     this.render();
   }
 
-  setCharacter(character){
-      this.character = character;
-      this.render();
+  setCharacter(character) {
+    this.character = character;
+    this.render();
   }
 
   //* Create html template for the character info
@@ -38,10 +38,10 @@ export default class Character {
             </div>`;
   }
 
-  async cleanScreen(){
-    this.characterImageContainer.innerHTML='';
-    this.characterNameContainer.innerHTML='';
-    this.characterDescriptionContainer.innerHTML='';
+  async cleanScreen() {
+    this.characterImageContainer.innerHTML = "";
+    this.characterNameContainer.innerHTML = "";
+    this.characterDescriptionContainer.innerHTML = "";
   }
 
   //* Method to display character on screen

@@ -26,6 +26,6 @@ const arrowNextCharacter = document.getElementById("arrow-next");
 arrowNextCharacter.addEventListener("click", () => {
   api.getCharacter(++currentIdCharacter).then((character) => {
     console.log(character);
-      currentCharacter.setCharacter(character);
+    currentCharacter.setCharacter(character);
   });
 });
