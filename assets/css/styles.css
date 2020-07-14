@@ -1,8 +1,12 @@
-/* General page */
 body {
   margin: 0;
-  background-color: #00a5be;
-  font-family: "Indie Flower", cursive;
+  background: #00a5be;
+  font-family: system-ui;
+  overflow-x: hidden;
+  background-image: url("../img/asset-red.svg");
+  background-position: left 200px top;
+  background-repeat: no-repeat;
+  font-family: "Gamja Flower", cursive;
 }
 
 .logo {
@@ -11,185 +15,55 @@ body {
   display: block;
 }
 
-/* Utilities */
-
-.wrapper {
-  max-width: 1280px;
-  margin: auto;
-  padding: 0 2rem;
+.grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  height: calc(100vh - 8em);
+  padding: 4em;
+  grid-column-gap: 8em;
+  grid-template-columns: 50px 1fr 1fr 200px;
+  grid-template-rows: 230px 100px 1fr 1fr 1fr;
+  grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom character-text avatar avatar" "asset-bottom learn-more arrow other-line";
 }
-
-/* Navigation */
-
-/* Repasar codigo, se puede hacer con direccion de pagina pero en este caso vamos a jugar con las rotaciones */
-/* .navigation {
-  Version con writing mode
-  transform-origin: left bottom;
-  transform: rotate(180deg);
-  writing-mode: vertical-rl; Manera de poner texto en vertical
-  position: absolute;
-  left: 2em;
-  height: calc(100vh - 4em);
-  bottom: 0;
-  text-align: center;
-  text-transform: uppercase;
+.character-image-container {
+  grid-area: avatar;
   display: flex;
-  justify-content: space-between;
-  padding: 2em 0;
-  display: none;
-} */
-
-.navigation .text {
-  display: inline-flex;
-  margin: 35px 0;
-  transition: all ease-in 0.3s 0s;
+  justify-content: center;
+  align-items: center;
 }
-
-.navigation .text:hover {
+.social a {
+  text-decoration: none;
+}
+.arrow {
+  grid-area: arrow;
   cursor: pointer;
-  outline: none;
-  font-weight: bold;
+  background-image: url("../img/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
 }
-
-/* Pseudolements */
-
-.assets {
+.learn-more {
+  grid-area: learn-more;
   display: flex;
-  align-items: center;
-}
-
-.dot {
-  width: 5px;
-  height: 5px;
-  background-color: black;
-  border-radius: 50%;
-  display: inline-flex;
-  margin: 5px 0;
-}
-
-.line {
-  width: 2px;
-  height: 150px;
-  background-color: black;
-  display: inline-flex;
-  margin: 15px 0;
-}
-
-/* Character */
-
-.character {
-  text-align: center;
-}
-
-.character-name {
-  font-size: 30px;
-  text-transform: uppercase;
-}
-/* Character img */
-
-.character-img {
-  max-width: 100%;
-  border-radius: 10%;
-  -webkit-box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.35);
-  box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.35);
-  transition: all ease-in 0.3s 0s;
-}
-
-.character-img:hover {
-  transform: scale(1.4, 1.4);
-  border-radius: 0px;
-}
-
-.character-label {
-  color: white;
-  background-color: #685128;
-  /* display: inline-flex; */
-  border-radius: 8px;
-  padding: 1em;
-  text-align: left;
+  align-items: flex-end;
   font-size: 25px;
-  font-weight: 400;
+  text-transform: uppercase;
+  background-image: url("../img/learn-more.svg");
+  background-repeat: no-repeat;
+  background-position: left 170px bottom 5px;
 }
-
-/* @media screen and (min-width: 1024px) {
-  .character-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "name avatar"
-      "labels avatar";
-  }
-
-  .character-name {
-    text-align: left;
-  }
-
-  .character-name h2 {
-    font-size: 50px;
-    position: relative;
-    display: inline-flex;
-  }
-
-  .character-name h2:after {
-    content: "";
-    width: 87px;
-    height: 4px;
-    background-color: #b1290a;
-    display: inline-flex;
-    position: absolute;
-    left: calc(100% + 5px);
-    top: 40%;
-  }
-
-  .character-labels {
-    grid-area: labels;
-  }
-
-  .character-img {
-    grid-area: avatar;
-    width: 300px;
-    border-radius: 10%;
-  }
-  .character-labels {
-    max-width: 300px;
-  }
-} */
-
-.assets {
-  writing-mode: vertical-rl;
-  /* margin-inline-start: 4em; */
-  display: flex;
-  align-items: center;
-}
-.assets.top {
+.asset.top {
   grid-area: asset-top;
 }
-
-.assets.bottom {
+.asset {
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+}
+.asset.bottom {
   grid-area: asset-bottom;
   justify-content: flex-end;
 }
-
-.grid {
-  padding: 4em;
-  height: calc(100vh - 8em);
-  display: grid;
-  grid-template-columns: 50px 1fr 1fr 200px;
-  grid-template-rows: 230px 100px 1fr 1fr 1fr;
-  grid-template-areas:
-    "asset-top logo logo redes"
-    "name name-char imagen imagen"
-    "about description imagen imagen"
-    "asset-bottom character-text imagen imagen"
-    "asset-bottom learn-more arrow other-line";
-  column-gap: 8.18em;
-}
-
-.redes {
-  grid-area: redes;
-}
-
 .navigation {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -197,11 +71,9 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .navigation.name {
   grid-area: name;
 }
-
 .navigation.about {
   grid-area: about;
 }
@@ -213,43 +85,111 @@ body {
   text-transform: uppercase;
 }
 
+.social {
+  grid-area: social;
+}
+
 .character-name-container {
   display: flex;
   align-items: center;
-  grid-area: name-char;
-}
-
-.character-image-container {
-  grid-area: imagen;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-area: character-name;
 }
 
 .character-description-container {
-  grid-area: description;
+  grid-area: character-description;
 }
 
-.learn-more {
-  grid-area: learn-more;
-  display: flex;
-  align-items: flex-end;
+.navigation .text {
+  display: inline-flex;
+  margin-inline: 35px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  display: inline-flex;
+  margin-inline: 5px;
+}
+
+.line {
+  width: 2px;
+  height: 150px;
+  background: black;
+  display: inline-flex;
+  margin-inline: 15px;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 2em;
+}
+
+.character {
+  text-align: center;
+}
+.character-img {
+  max-width: 100%;
+  border-radius: 10%;
+  height: 80%;
+  transition: all ease-in 0.3s 0.1s;
+}
+.character-img:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 0;
+}
+
+.character-label {
+  background: #685128;
+  padding: 1em;
+  color: white;
+  border-radius: 10px;
+  text-align: left;
   font-size: 25px;
+  font-weight: 400;
+}
+.character-name {
+  position: relative;
+  font-size: 30px;
+  font-family: "Indie Flower", cursive;
+}
+.character-name h2:after {
+  content: "";
+  width: 87px;
+  height: 6px;
+  background-color: #d13219;
+  display: inline-flex;
+  position: absolute;
+  left: calc(100% + 5px);
+  top: 49%;
+}
+
+.placeholder-container {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.character-name-placeholder {
+  font-family: "Indie Flower", cursive;
+  color: rgba(0, 0, 0, 0.1);
+  font-size: 300px;
   text-transform: uppercase;
-  background-image: url("/assets/img/learn-more.svg");
-  background-repeat: no-repeat;
-  background-position: left 170px bottom 5px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  white-space: nowrap;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 }
-
-.arrow {
-  grid-area: arrow;
-  background-image: url("/assets/img/arrow.svg");
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  outline: none;
-  cursor: pointer;
-}
-
 @media screen and (max-width: 1440px) {
   .grid {
     column-gap: 2em;
@@ -268,63 +208,48 @@ body {
     column-gap: 1em;
     grid-template-columns: 50px 1fr 1fr;
     grid-template-rows: repeat(6, auto);
-    grid-template-areas:
-      "logo logo logo"
-      "name imagen imagen"
-      "name name-char name-char"
-      "about description description"
-      "arrow arrow arrow"
-      "redes redes redes";
+    grid-template-areas: "logo logo logo" "name avatar avatar" "name character-name character-name" "about character-description character-description" "arrow arrow arrow" "social social social";
   }
 
   .logo {
     max-width: 100%;
   }
-  .redes {
-    text-align: center;
-    margin-top: 1em;
-  }
-
-  .character-name-container {
-    justify-content: center;
-    margin-top: 1em;
-  }
   .character-name {
     text-align: center;
   }
-
-  .character-img {
-    border-radius: 50%;
-  }
-  .character-img:hover {
-    transform: scale(1, 1);
-  }
-
-  .arrow {
-    user-select: none;
-    height: 50px;
-    background-position: center;
-  }
-
-  .assets {
-    display: none;
-  }
-  .learn-more {
-    display: none;
-  }
-
   .character-name h2:after {
     left: 0;
     top: calc(100% - 20px);
   }
 
-  .redes a {
+  .character-name-container {
+    margin-top: 1em;
+    justify-content: center;
+  }
+
+  .character-img {
+    border-radius: 50%;
+    height: auto;
+  }
+  .social {
+    text-align: center;
+    margin-top: 2em;
+  }
+  .asset {
+    display: none;
+  }
+  .learn-more {
+    display: none;
+  }
+  .arrow {
+    user-select: none;
+    height: 50px;
+    background-position: center;
+  }
+  .social a {
     margin-left: 2em;
   }
-  .redes a:first-child {
+  .social a:first-child {
     margin-left: 0;
   }
 }
-
-
-/* TODO bug with bottom asste, shrink */

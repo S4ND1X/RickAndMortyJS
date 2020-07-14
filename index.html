@@ -4,66 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rick and Morty Wiki</title>
-    <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>Rick and Morty Info</title>
 
-    <!-- Estilos -->
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Indie+Flower&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom css -->
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
-
+    <div class="placeholder-container">
+        <h1 id="character-name-placeholder" class="character-name-placeholder"></h1>
+    </div>
     <div class="grid">
-        <span class="assets top">
+        <span class="asset top">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="line"></span>
         </span>
-
-        <img class="logo" src="./assets/img/logo@2x.png" width="280" alt="Rick and morty log">
-        <div class="redes">
-            <a href="#"><img src="./assets/img/instagram.svg" alt=""></a>
-            <a href="#"><img src="./assets/img/facebook.svg" alt=""></a>
-            <a href="#"><img src="./assets/img/twitter.svg" alt=""></a>
-
+        <img class="logo" width="500" src="assets/img/logo@2x.png" alt="">
+        <div class="social">
+            <a href="https://www.instagram.com/_365daysofcoding_">
+                <img src="assets/img/instagram.svg" alt="">
+            </a>
+            <a href="https://www.facebook.com/jorge.sanchezdiaz.94/">
+                <img src="assets/img/facebook.svg" alt="">
+            </a>
+            <a href="https://twitter.com/S4ND1X">
+                <img src="assets/img/twitter.svg" alt="">
+            </a>
         </div>
-
         <div class="navigation name">
             <a href="#">Name</a>
         </div>
-
         <div id="character-name-container" class="character-name-container">
+
         </div>
 
         <div id="character-image-container" class="character-image-container">
         </div>
+        <div class="navigation about">
+            <a href="#">About</a>
+        </div>
 
-        <span class="assets bottom">
+
+        <div id="character-description-container" class="character-description-container">
+
+        </div>
+        <span class="asset bottom">
             <span class="line"></span>
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
         </span>
 
-
-        <div class="navigation about">
-            <a href="#">About</a>
-        </div>
-
-        <div class="character-description-container">
-        </div>
-
         <div></div>
         <div class="learn-more">
-            <span>Learn More</span>
+            <span>learn more</span>
         </div>
-        <div id="arrow-next" class="arrow"></div>
-        <div></div>
+
+        <div class="arrow" id="arrow-next"></div>
+
     </div>
 
-    <script type="module" src="./assets/js/app.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
 </body>
 
 </html>
