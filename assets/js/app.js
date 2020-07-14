@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", initApp);
 
 //* Get the first character when page is loaded
 function initApp() {
+  music.play();
   api.getCharacter(1).then((character) => {
     currentCharacter = new Character(character);
     characterNamePlaceHolderContainer.innerHTML = character.name;
   });
-  music.play();
 }
 
 const arrowNextCharacter = document.getElementById("arrow-next");
