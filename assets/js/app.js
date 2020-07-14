@@ -12,16 +12,6 @@ let characterNamePlaceHolderContainer = document.getElementById(
   "character-name-placeholder"
 );
 
-let muteButton = document
-  .getElementById("mute")
-  .addEventListener("click", (e) => {
-    e.preventDefault();
-    if (music.paused) {
-      music.play();
-    } else {
-      music.pause();
-    }
-  });
 
 let music = document.getElementById("audio");
 music.loop = true;
@@ -47,3 +37,15 @@ arrowNextCharacter.addEventListener("click", () => {
     characterNamePlaceHolderContainer.innerHTML = character.name;
   });
 });
+
+
+let muteButton = document
+  .getElementById("mute")
+  .addEventListener("click", (e) => {
+    e.preventDefault();
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  });
