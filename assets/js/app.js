@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", initApp);
 //* Get the first character when page is loaded
 function initApp() {
   api.getCharacter(1).then((character) => {
-    console.log(character);
     currentCharacter = new Character(character);
     characterNamePlaceHolderContainer.innerHTML = character.name;
   });
