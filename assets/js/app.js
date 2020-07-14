@@ -12,6 +12,20 @@ let characterNamePlaceHolderContainer = document.getElementById(
   "character-name-placeholder"
 );
 
+let muteButton = document
+  .getElementById("mute")
+  .addEventListener("click", (e) => {
+    e.preventDefault();
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  });
+
+let music = document.getElementById("audio");
+music.loop = true;
+
 //* Wait for page to load
 document.addEventListener("DOMContentLoaded", initApp);
 
@@ -24,10 +38,10 @@ function initApp() {
     currentCharacter = new Character(character);
     characterNamePlaceHolderContainer.innerHTML = character.name;
   });
+  music.play();
 }
 
 const arrowNextCharacter = document.getElementById("arrow-next");
-
 arrowNextCharacter.addEventListener("click", () => {
   api.getCharacter(++currentIdCharacter).then((character) => {
     currentCharacter.setCharacter(character);
