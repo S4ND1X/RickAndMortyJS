@@ -89,7 +89,7 @@ body {
 
 .character-img {
   max-width: 100%;
-  border-radius: 50%;
+  border-radius: 10%;
   -webkit-box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.35);
   box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.35);
@@ -97,11 +97,8 @@ body {
 }
 
 .character-img:hover {
-  transform: scale(1.1, 1.1);
-  border-radius: 10%;
-}
-.character-labels {
-  max-width: 300px;
+  transform: scale(1.4, 1.4);
+  border-radius: 0px;
 }
 
 .character-label {
@@ -115,7 +112,7 @@ body {
   font-weight: 400;
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .character-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -157,12 +154,11 @@ body {
   .character-labels {
     max-width: 300px;
   }
-}
+} */
 
 .assets {
   writing-mode: vertical-rl;
   /* margin-inline-start: 4em; */
-  border: 1px solid red;
   display: flex;
   align-items: center;
 }
@@ -180,7 +176,7 @@ body {
   height: calc(100vh - 8em);
   display: grid;
   grid-template-columns: 50px 1fr 1fr 200px;
-  grid-template-rows: 230px 120px 1fr 1fr 1fr;
+  grid-template-rows: 230px 100px 1fr 1fr 1fr;
   grid-template-areas:
     "asset-top logo logo redes"
     "name name-char imagen imagen"
@@ -192,7 +188,6 @@ body {
 
 .redes {
   grid-area: redes;
-  border: 1px solid red;
 }
 
 .navigation {
@@ -204,12 +199,10 @@ body {
 }
 
 .navigation.name {
-  border: 1px solid purple;
   grid-area: name;
 }
 
 .navigation.about {
-  border: 1px solid purple;
   grid-area: about;
 }
 
@@ -221,41 +214,114 @@ body {
 }
 
 .character-name-container {
-  border: 1px solid black;
   display: flex;
   align-items: center;
+  grid-area: name-char;
 }
 
 .character-image-container {
   grid-area: imagen;
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.character-description {
+.character-description-container {
   grid-area: description;
 }
 
 .learn-more {
   grid-area: learn-more;
-  border: 1px solid brown;
   display: flex;
   align-items: flex-end;
   font-size: 25px;
   text-transform: uppercase;
   background-image: url("/assets/img/learn-more.svg");
   background-repeat: no-repeat;
-  background-position: left 150px bottom 10px;
+  background-position: left 170px bottom 5px;
 }
 
 .arrow {
   grid-area: arrow;
-  border: 1px solid rebeccapurple;
   background-image: url("/assets/img/arrow.svg");
   background-repeat: no-repeat;
   background-position: left bottom;
   outline: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1440px) {
+  .grid {
+    column-gap: 2em;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background-position: left 50px top;
+  }
+  .grid {
+    height: auto;
+    padding: 2em 0;
+    width: calc(100vw - 2em);
+    margin: 0 auto;
+    column-gap: 1em;
+    grid-template-columns: 50px 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+      "logo logo logo"
+      "name imagen imagen"
+      "name name-char name-char"
+      "about description description"
+      "arrow arrow arrow"
+      "redes redes redes";
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+  .redes {
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .character-name-container {
+    justify-content: center;
+    margin-top: 1em;
+  }
+  .character-name {
+    text-align: center;
+  }
+
+  .character-img {
+    border-radius: 50%;
+  }
+  .character-img:hover {
+    transform: scale(1, 1);
+  }
+
+  .arrow {
+    user-select: none;
+    height: 50px;
+    background-position: center;
+  }
+
+  .assets {
+    display: none;
+  }
+  .learn-more {
+    display: none;
+  }
+
+  .character-name h2:after {
+    left: 0;
+    top: calc(100% - 20px);
+  }
+
+  .redes a {
+    margin-left: 2em;
+  }
+  .redes a:first-child {
+    margin-left: 0;
+  }
 }
